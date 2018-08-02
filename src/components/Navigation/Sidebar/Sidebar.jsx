@@ -4,7 +4,8 @@ import classes from './Sidebar.css';
 import Backdrop from '../../UI/Backdrop/Backdrop.jsx';
 import Logo from '../Logo/Logo.jsx';
 import Searchbar from '../Searchbar/Searchbar.jsx';
-import UserSettings from '../UserSettings/UserSettings.jsx';
+import UserSettingsAvatar from '../UserSettingsAvatar/UserSettingsAvatar.jsx';
+import UserSettings from '../../UI/UserSettings/UserSettings';
 
 class Sidebar extends Component {
     render() {
@@ -20,7 +21,8 @@ class Sidebar extends Component {
                 <div className={attachedClasses.join(' ')}>
                     <Logo />
                     <Searchbar />
-                    <UserSettings />
+                    {/* <UserSettingsAvatar/> */}
+                    <UserSettings clicked={this.props.closed}/>
                 </div>
             </div>
         );

@@ -1,4 +1,4 @@
-.UserSettings {
+.UserSettingsAvatar {
     margin-right: 40px;
     width: 33.33%;
     display: flex;
@@ -16,7 +16,7 @@
 
 
 @media (max-width: 500px) {
-    .UserSettings {
+    .UserSettingsAvatar {
         justify-content: center;
         margin-top: 16px;
         height: auto;

@@ -25,7 +25,7 @@ class Layout extends Component {
     render() {
         let margin = "0px";
         if (this.props.show) {
-            margin = "52px";
+            margin = "51px";
         }
         return (
             <div>

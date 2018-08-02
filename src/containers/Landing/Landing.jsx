@@ -83,7 +83,7 @@ class Landing extends Component {
                                 onChange={this.onChange} />
                             <button type="submit" className={classes.SubmitBtn}>Login</button>
                         </form>
-                        <p>Don't have an account? <a href="#" onClick={this.showRegister}>Sign Up</a></p>
+                        <p>Don't have an account? <span onClick={this.showRegister}>Sign Up</span></p>
                     </div>
                 </RenderIf>
                 <RenderIf condition={this.state.registerShow}>
@@ -115,7 +115,7 @@ class Landing extends Component {
                                 onChange={this.onChange} />
                             <button type="submit" className={classes.SubmitBtn}>Register</button>
                         </form>
-                        <p>Already have an account? <a href="#" onClick={this.showLogin}>Login</a></p>
+                        <p>Already have an account? <span onClick={this.showLogin}>Login</span></p>
                     </div>
                 </RenderIf>
                 <div className={classes.ImageContainer}>
