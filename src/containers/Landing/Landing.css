@@ -12,11 +12,16 @@
     height: 100%;
     background: #fff;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .ImageContainer img {
     width: 100%;
     height: auto;
+    min-height: 100vh;
+    background: #fff;
 }
 
 .LoginContainer {
@@ -31,13 +36,27 @@
     padding: 7%;
 }
 
+.RegisterContainer {
+    width: 35%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 7%;
+
+}
+
 @media (min-width: 1280px) {
     .LoginContainer {
         padding: 90px;
     }
 }
 
-.LoginContainer h2 {
+.LoginContainer h2,
+.RegisterContainer h2 {
     margin: 0;
     padding: 0;
     font-family: 'Roboto';
@@ -47,7 +66,8 @@
     margin-top: 8px;
 }
 
-.LoginContainer h1 {
+.LoginContainer h1,
+.RegisterContainer h1 {
     margin: 0;
     padding: 0;
     line-height: 23px;
@@ -57,7 +77,8 @@
     letter-spacing: -0.7px;
 }
 
-.LoginContainer input {
+.LoginContainer input,
+.RegisterContainer input {
     display: block;
     width: 240px;
     margin-top: 14px;
@@ -69,26 +90,29 @@
     outline: none;
     border-bottom: 1px solid #d8d8d8;
     box-sizing: border-box;
-
 }
 
-.LoginContainer form {
+.LoginContainer form,
+.RegisterContainer form {
     margin-top: 56px;
 }
 
-.LoginContainer form label {
+.LoginContainer form label
+.RegisterContainer form label {
     color: #3e3f51;
     font-size: 14px;
     line-height: 16px;
 }
 
-.LoginContainer p {
+.LoginContainer p,
+.RegisterContainer p {
     color: #3e3f51;
     font-size: 14px;
     margin-top: 32px;
 }
 
-.LoginContainer p a {
+.LoginContainer p a,
+.RegisterContainer p a {
     color: #1aa8ff;
 }
 
