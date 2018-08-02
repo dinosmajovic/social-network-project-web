@@ -1,0 +1,28 @@
+.Topbar {
+    width: 100%;
+    height: 72px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+    border: solid 1px #e4e9ef;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    z-index: 90;
+}
+
+.DesktopTopbar {
+    width: 66.66%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 499px) {
+    .DesktopTopbar {
+        display: none;
+    }
+}

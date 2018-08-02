@@ -1,0 +1,104 @@
+.Landing {
+    height: 100vh;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ImageContainer {
+    width: 65%;
+    height: 100%;
+    background: #fff;
+    overflow: hidden;
+}
+
+.ImageContainer img {
+    width: 100%;
+    height: auto;
+}
+
+.LoginContainer {
+    width: 35%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 7%;
+}
+
+@media (min-width: 1280px) {
+    .LoginContainer {
+        padding: 90px;
+    }
+}
+
+.LoginContainer h2 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 20px;
+    color: #0d283a;
+    margin-top: 8px;
+}
+
+.LoginContainer h1 {
+    margin: 0;
+    padding: 0;
+    line-height: 23px;
+    font-size: 32px;
+    color: #444;
+    font-family: 'Roboto';
+    letter-spacing: -0.7px;
+}
+
+.LoginContainer input {
+    display: block;
+    width: 240px;
+    margin-top: 14px;
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 16px;
+    padding: 8px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #d8d8d8;
+    box-sizing: border-box;
+
+}
+
+.LoginContainer form {
+    margin-top: 56px;
+}
+
+.LoginContainer form label {
+    color: #3e3f51;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.LoginContainer p {
+    color: #3e3f51;
+    font-size: 14px;
+    margin-top: 32px;
+}
+
+.LoginContainer p a {
+    color: #1aa8ff;
+}
+
+.SubmitBtn {
+    width: 240px;
+    height: 32px;
+    border-radius: 3px;
+    background: #1aa8ff;
+    border: 0px;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+}

@@ -1,0 +1,5 @@
+.Mopsters {
+    height: calc(100vh - 72px);
+    width: 100%;
+    background: #f3f7fa;
+}

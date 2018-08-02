@@ -1,0 +1,12 @@
+.SidebarToggle {
+    position: fixed;
+    right: 15px;
+    top: 18px;
+    cursor: pointer;
+}
+
+@media (min-width: 500px) {
+    .MobileOnly {
+        display: none;
+    }
+}

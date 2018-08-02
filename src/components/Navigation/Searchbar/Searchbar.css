@@ -1,0 +1,47 @@
+.Searchbar {
+    width: 72%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    max-width: 560px;
+    position: relative;
+}
+
+.Searchbar input {
+    width: 100%;
+    height: 36px;
+    border-radius: 3px;
+    border: solid 1px #e4e9ef;
+    padding-left: 40px;
+    outline: none;
+    font-size: 14px;
+    font-family: 'Roboto';
+    font-weight: 300;
+}
+
+.SearchIcon {
+    position: absolute;
+    cursor: pointer;
+    height: 38px;
+    padding: 0 5px 0 10px;
+}
+
+.Searchbar input:focus {
+    border: solid 1px #E22A37;
+} 
+
+.Searchbar input::-webkit-input-placeholder {
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 30px;
+    color: #a7a7a7;
+}
+
+@media (max-width: 500px) {
+    .Searchbar {
+        width: 100%;
+        height: auto;
+        margin-top: 16px;
+    }
+}
