@@ -1,0 +1,48 @@
+.PeopleToFollowContainer {
+    width: 368px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.PeopleToFollow {
+    margin-top: 40px;
+    width: 304px;
+    background: #fff;
+    height: auto;
+    border-radius: 3px;
+    border: solid 1px #e4e9ef;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    font-size: 16px;
+    color: #a7a7a7;
+    margin-left: 24px;
+    font-weight: 300;
+}
+
+.LoadMoreBtn {
+    width: 303px;
+    background: #fff;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border: solid 1px #e4e9ef;
+    height: 54px;
+    outline: none;
+    box-shadow: none;
+    border-left: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #3e3f51;
+    font-weight: 500;
+}
+
+.LoadMoreBtn:hover {
+    background: #FAFAFA;
+}

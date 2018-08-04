@@ -1,5 +1,9 @@
 .Dashboard {
-    width: 100%;
-    height: calc(100vh - 72px);
+    height: 2000px;
+    width: calc(100% - 368px - 368px);
+}
+
+.DashboardContainer {
+    display: flex;
     background: #f3f7fa;
 }

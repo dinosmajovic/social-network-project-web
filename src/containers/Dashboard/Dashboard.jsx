@@ -3,32 +3,33 @@ import classes from './Dashboard.css';
 
 import {Link, Route} from 'react-router-dom'
 import DashboardNavigation from '../../components/DashboardNavigation/DashboardNavigation';
+import PeopleToFollow from '../../components/PeopleToFollow/PeopleToFollow';
 
 //import Events from '../Events/Events.jsx'
 
 const NewsFeed = () => (
-    <h1>NewsFeed</h1>
+    <span>NewsFeed</span>
 )
 const Groups = () => (
-    <h1>Groups</h1>
+    <span>Groups</span>
 )
 const Events = () => (
-    <h1>Events</h1>
+    <span>Events</span>
 )
 
 class Dashboard extends Component {
     render() {
         return (
-            <div>
+            <div className={classes.DashboardContainer}>
                 <DashboardNavigation />
 
-                <div style={{
-                    marginLeft: "300px"
-                }}>
+                <div className={classes.Dashboard}>
                     <Route exact path="/" component={NewsFeed} />
                     <Route path="/events" component={Events} />
                     <Route path="/groups" component={Groups} />
                 </div>
+
+                <PeopleToFollow />
             </div>
         );
     }

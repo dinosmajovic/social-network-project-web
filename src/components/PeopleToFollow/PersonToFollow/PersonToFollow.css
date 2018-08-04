@@ -1,0 +1,44 @@
+.PersonToFollow {
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.PersonToFollow:last-child {
+    margin-bottom: 24px;
+}
+
+.Avatar {
+    width: 40px;
+    height: 40px;
+    margin-left: 24px;
+    margin-right: 8px;
+    border-radius: 50%;
+    background: #f3f7fa;
+}
+
+.Name {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 300;
+    color: #1d1e37;
+}
+
+.Mutual {
+    margin: 0;
+    padding: 0;
+    margin-top: 1px;
+    font-size: 12px;
+    font-weight: 300;
+    color: #a7a7a7;
+}
+
+.Btn {
+    position: absolute;
+    right: 24px;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+}

@@ -10,7 +10,7 @@ const Searchbar = () => (
             className={classes.SearchIcon} 
             icon="ios-search" 
             color="#a7a7a7" 
-            fontSize="22px" />
+            fontSize="35px" />
     </div>
 );
 
