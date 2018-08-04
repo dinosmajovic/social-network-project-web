@@ -16,8 +16,8 @@ class Landing extends Component {
         rusername: '',
         password: '',
         rpassword: '',
-        remail: '',
-        errors: {},
+        errors: null,
+        blank: [1,2,3],
         registerShow: false
     } 
 
@@ -44,6 +44,17 @@ class Landing extends Component {
         this.props.loginUser(userData)
     }
 
+    onRegisterFormSubmit = (e) => {
+        e.preventDefault();
+
+        const userData = {
+            "username": this.state.rusername,
+            "password": this.state.rpassword
+        }
+
+        this.props.registerUser(userData);
+    }
+
     showRegister = () => {
         this.setState({
             registerShow: true
@@ -58,7 +69,13 @@ class Landing extends Component {
 
     render() {
         const { errors } = this.state;
+        let showErrors;
 
+        if (this.state.errors) {
+            showErrors = Object.keys(this.state.errors).map(error => {
+                this.state.errors[error].map(err => <p>{err}</p>)
+            })
+        }
         return (
             <div className={classes.Landing}>
                 <RenderIf condition={!this.state.registerShow}>
@@ -67,10 +84,10 @@ class Landing extends Component {
                         <h2>Welcome to</h2>
                         <h1>mopsters</h1>
                         <form onSubmit={this.onLoginFormSubmit}>
-                            <label>Email</label>
+                            <label>Username</label>
                             <input 
                                 type="text" 
-                                placeholder="example@email.com"
+                                placeholder="exampleuser"
                                 name="username"
                                 value={this.state.username}
                                 onChange={this.onChange} />
@@ -99,13 +116,6 @@ class Landing extends Component {
                                 name="rusername"
                                 value={this.state.rusername}
                                 onChange={this.onChange} />
-                            <label>Email</label>
-                            <input 
-                                type="text" 
-                                placeholder="example@email.com"
-                                name="remail"
-                                value={this.state.remail}
-                                onChange={this.onChange} />
                             <label>Password</label>
                             <input 
                                 type="password" 
@@ -115,6 +125,7 @@ class Landing extends Component {
                                 onChange={this.onChange} />
                             <button type="submit" className={classes.SubmitBtn}>Register</button>
                         </form>
+                        {showErrors}
                         <p>Already have an account? <span onClick={this.showLogin}>Login</span></p>
                     </div>
                 </RenderIf>
@@ -131,4 +142,4 @@ const mapStateToProps = state => ({
     errors: state.errors
 })
 
-export default connect(mapStateToProps, {loginUser})(withRouter(Landing));
+export default connect(mapStateToProps, {loginUser, registerUser})(withRouter(Landing));

@@ -1,8 +1,0 @@
-.NewsFeed {
-    width: 100%;
-    height: calc(100vh - 72px);
-    background: #f3f7fa;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
