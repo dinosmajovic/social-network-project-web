@@ -1,0 +1,48 @@
+.CreatePost {
+    width: 544px;
+    height: 136px;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+    border: solid 1px #e4e9ef;
+    padding: 30px 16px 0 24px;
+    position: relative;
+}
+
+.PostText {
+    width: 100%;
+    font-size: 20px;
+    font-family: 'Roboto';
+    font-weight: 300;
+    resize: none;
+    outline: none;
+    border: none;
+}
+
+.PostText::-webkit-input-placeholder {
+    color: #a7a7a7;
+}
+
+.CreatePost footer {
+    height: 49px;
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.PostBtn {
+    width: 62px;
+    height: 32px;
+    border-radius: 3px;
+    background: #3179ff;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    opacity: 0.2;
+    float: right;
+    margin-right: 16px;
+    margin-bottom: 16px;
+}

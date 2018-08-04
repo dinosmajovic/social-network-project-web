@@ -1,0 +1,10 @@
+.NewsFeed {
+    /* background: pink; */
+    height: 500px;
+}
+
+.AddPost {
+    width: 544px;
+    height: 136px;
+    background: #fff;
+}

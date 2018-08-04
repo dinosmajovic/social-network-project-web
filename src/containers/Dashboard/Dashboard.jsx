@@ -6,10 +6,8 @@ import DashboardNavigation from '../../components/DashboardNavigation/DashboardN
 import PeopleToFollow from '../../components/PeopleToFollow/PeopleToFollow';
 
 //import Events from '../Events/Events.jsx'
+import NewsFeed from '../NewsFeed/NewsFeed.jsx';
 
-const NewsFeed = () => (
-    <span>NewsFeed</span>
-)
 const Groups = () => (
     <span>Groups</span>
 )
