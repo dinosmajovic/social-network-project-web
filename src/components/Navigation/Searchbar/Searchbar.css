@@ -25,10 +25,6 @@
     padding: 0 5px 0 10px;
 }
 
-.Searchbar input:focus {
-    border: solid 1px #E22A37;
-} 
-
 .Searchbar input::-webkit-input-placeholder {
     font-family: 'Roboto';
     font-weight: 300;

@@ -2,6 +2,8 @@
     min-height: calc(100vh - 112px);
     height: auto;
     width: calc(100% - 368px - 368px);
+    display: flex;
+    justify-content: center;
 }
 
 .DashboardContainer {

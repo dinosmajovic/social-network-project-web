@@ -5,15 +5,9 @@ import {Link, Route} from 'react-router-dom'
 import DashboardNavigation from '../../components/DashboardNavigation/DashboardNavigation';
 import PeopleToFollow from '../../components/PeopleToFollow/PeopleToFollow';
 
-//import Events from '../Events/Events.jsx'
+import Events from '../Events/Events.jsx'
 import NewsFeed from '../NewsFeed/NewsFeed.jsx';
-
-const Groups = () => (
-    <span>Groups</span>
-)
-const Events = () => (
-    <span>Events</span>
-)
+import Groups from '../Groups/Groups.jsx'
 
 class Dashboard extends Component {
     render() {

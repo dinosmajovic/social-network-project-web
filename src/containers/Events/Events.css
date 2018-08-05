@@ -1,0 +1,30 @@
+.Events {
+    height: auto;
+    width: 100%;
+    max-width: 544px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Upcoming, .MayLike {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Upcoming {
+    margin-bottom: 30px;
+}
+
+.MayLike {
+    margin-bottom: 100px;
+}
+
+.SectionName {
+    color: #3e3f51;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 0.8;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 24px;
+}
