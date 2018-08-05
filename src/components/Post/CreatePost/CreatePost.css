@@ -1,5 +1,6 @@
 .CreatePost {
-    width: 544px;
+    max-width: 544px;
+    width: 100%;
     height: 136px;
     background: #fff;
     border-radius: 3px;
@@ -7,6 +8,8 @@
     border: solid 1px #e4e9ef;
     padding: 30px 16px 0 24px;
     position: relative;
+    box-sizing: border-box;
+    margin-bottom: 24px;
 }
 
 .PostText {
@@ -24,25 +27,37 @@
 }
 
 .CreatePost footer {
-    height: 49px;
+    height: 48px;
     width: 100%;
     background: #fff;
     position: absolute;
     bottom: 0;
     left: 0;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .PostBtn {
     width: 62px;
     height: 32px;
     border-radius: 3px;
-    background: #3179ff;
+    background: #1aa8ff;
     color: #fff;
     font-size: 14px;
     font-weight: 500;
-    border: none;
-    opacity: 0.2;
-    float: right;
     margin-right: 16px;
-    margin-bottom: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.GalleryIcon {
+    height: 16px;
+    margin-top: 8px;
+    margin-right: 19px;
+    cursor: pointer;
+}
+
+.PostBtn:disabled {
+    opacity: 0.2;
+    cursor: auto;
 }

@@ -15,7 +15,7 @@ export default class DashboardNavigation extends Component {
                 exact 
                 to="/"
                 className={classes.Navlink} 
-                activeClassName={classes.selected}>
+                activeClassName={classes.selectedFeed}>
                   <img src={FeedIcon} className={classes.NavigationIcon} alt=""/>
                   News Feed
                 </NavLink>
@@ -23,7 +23,7 @@ export default class DashboardNavigation extends Component {
                 exact 
                 to="/events"
                 className={classes.Navlink}
-                activeClassName={classes.selected}>
+                activeClassName={classes.selectedEvents}>
                   <img src={EventsIcon} className={classes.NavigationIcon} alt=""/>
                   Events
                 </NavLink>
@@ -31,7 +31,7 @@ export default class DashboardNavigation extends Component {
                 exact 
                 to="/groups"
                 className={classes.Navlink}
-                activeClassName={classes.selected}>
+                activeClassName={classes.selectedGroups}>
                   <img src={GroupsIcon} className={classes.NavigationIcon} alt=""/>
                   Groups
                 </NavLink>

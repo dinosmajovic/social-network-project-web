@@ -15,6 +15,7 @@
     width: 304px;
     height: auto;
     border-radius: 3px;
+    margin-left: 8px;
 }
 
 .Navlink {
@@ -42,14 +43,31 @@
     margin-right: 12px;
 }
 
-.selected::before {
+.selectedFeed::before {
     content: '';
     height: 100%;
     left: 0;
     position: absolute;
     width: 3px;
     background: #1aa8ff;
-    
+}
+
+.selectedEvents::before {
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    width: 3px;
+    background: #ff552c;
+}
+
+.selectedGroups::before {
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    width: 3px;
+    background: #2ddb60;
 }
 
 .Navlink:first-of-type {

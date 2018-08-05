@@ -15,6 +15,7 @@ class PeopleToFollow extends Component {
         let peopleList = people.map(person => (
             <PersonToFollow name={person.name} mutual={person.mutual} />
         ))
+        
         return (
             <div className={classes.PeopleToFollowContainer} >
                 <div className={classes.PeopleToFollow}>

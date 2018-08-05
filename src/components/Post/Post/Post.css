@@ -1,0 +1,110 @@
+.Post {
+    padding: 24px;
+    background: #fff;
+    max-width: 544px;
+    width: 100%;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+    border: solid 1px #e4e9ef;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Post header {
+    display: flex;
+    align-items: center;
+}
+
+.Avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f3f7fa;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.Name {
+    font-size: 14px;
+    color: #1d1e37;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.Timestamp {
+    margin: 0;
+    padding: 0;
+    color: #a7a7a7;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.MoreIcon {
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.PostText {
+    color: #3e3f51;
+    font-size: 14px;
+    line-height: 1.71;
+    margin-top: 24px;
+    margin-bottom: 40px;
+}
+
+.Image {
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.TextWithImage {
+    margin-bottom: 24px;
+}
+
+.Post footer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.LikeContainer {
+    margin-left: auto;
+}
+
+.LikeContainer img {
+    height: 16px;
+    width: 18px;
+    margin-right: 8px;
+    position: relative;
+    top: 3px;
+    cursor: pointer;
+}
+
+.CommentText {
+    background: none;
+    border: none;
+    box-shadow: none;
+    resize: none;
+    outline: none;
+    font-family: 'Roboto';
+    font-size: 14px;
+    line-height: 1.45;
+    width: 80%;
+}
+
+.CommentText::-webkit-input-placeholder {
+    line-height: 1.57;
+    font-size: 14px;
+    font-weight: 300;
+    color: #a7a7a7;
+}
+
+.LikesNum {
+    color: #3e3f51;
+    font-size: 14px;
+    height: 16px;
+}

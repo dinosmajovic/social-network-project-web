@@ -1,10 +1,7 @@
 .NewsFeed {
-    /* background: pink; */
-    height: 500px;
-}
-
-.AddPost {
-    width: 544px;
-    height: 136px;
-    background: #fff;
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }

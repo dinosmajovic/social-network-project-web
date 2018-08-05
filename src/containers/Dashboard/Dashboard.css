@@ -1,5 +1,6 @@
 .Dashboard {
-    height: calc(100vh - 112px);
+    min-height: calc(100vh - 112px);
+    height: auto;
     width: calc(100% - 368px - 368px);
 }
 
