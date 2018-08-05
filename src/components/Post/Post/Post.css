@@ -57,12 +57,14 @@
 }
 
 .Image {
-    width: 100%;
+    width: calc(100% + 48px);
+    margin-right: -24px;
+    margin-left: -24px;
     margin-bottom: 24px;
 }
 
 .TextWithImage {
-    margin-bottom: 24px;
+    margin-bottom: 15px;
 }
 
 .Post footer {

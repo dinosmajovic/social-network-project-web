@@ -14,7 +14,7 @@ class NewsFeed extends Component {
             },
             {
                 name: "Dino Smajovic",
-                postText: "Ovo je moj ker.",
+                postText: "A little Dog that wags his tail.",
                 timeStamp: "2 days ago",
                 photo: "http://www.pethealthnetwork.com/sites/default/files/why-does-my-vet-want-a-poop-sample-186258997.jpg",
                 likesNum: 25

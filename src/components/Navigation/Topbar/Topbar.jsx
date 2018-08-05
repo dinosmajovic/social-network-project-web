@@ -8,11 +8,9 @@ import UserSettingsAvatar from '../UserSettingsAvatar/UserSettingsAvatar.jsx';
 
 const Topbar = props => (
     <div className={classes.Topbar}>
-        <Logo />
-        <div className={classes.DesktopTopbar}>
-            <Searchbar />
-            <UserSettingsAvatar />
-        </div>
+        <Logo />    
+        <div className={classes.DesktopSearchbar}><Searchbar /></div>
+        <div className={classes.DesktopAvatar}><UserSettingsAvatar /></div>
         <SidebarToggle clicked={props.sidebarToggleClicked} />
     </div>
 );

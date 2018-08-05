@@ -7,8 +7,9 @@
     height: 100%;
     background: #f3f7fa;
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .DashboardNavigation {
@@ -78,4 +79,52 @@
 .Navlink:last-of-type {
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
+}
+
+.CreateEventBtn {
+    width: 304px;
+    margin-left: 8px;
+    margin-top: 16px;
+    border: none;
+    height: 32px;
+    border-radius: 3px;
+    background-color: #ff552c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    outline: none;
+}
+
+.CreateEventBtn:hover {
+    background: #ff3c0e;
+}
+
+.CreateGroupBtn {
+    width: 304px;
+    margin-left: 8px;
+    margin-top: 16px;
+    border: none;
+    height: 32px;
+    border-radius: 3px;
+    background-color: #25c253;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    outline: none;
+}
+
+.CreateGroupBtn:hover {
+    background: #21ae4a;
+}
+
+.AddIcon {
+    margin-right: 2px;
 }

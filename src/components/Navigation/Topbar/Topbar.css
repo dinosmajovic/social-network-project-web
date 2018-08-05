@@ -14,15 +14,17 @@
     z-index: 90;
 }
 
-.DesktopTopbar {
-    width: 66.66%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.DesktopSearchbar {
+    width: 50%;
+    max-width: 560px;
+}
+
+.DesktopAvatar {
+    width: 140px;
 }
 
 @media (max-width: 499px) {
-    .DesktopTopbar {
+    .DesktopSearchbar, .DesktopAvatar {
         display: none;
     }
 }
