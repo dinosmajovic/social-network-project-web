@@ -43,3 +43,81 @@
     width: 24px;
     cursor: pointer;
 }
+
+.FollowBtn {
+    width: 24px;
+    height: 24px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    right: 24px;
+    cursor: pointer;
+    border: 1px solid #a7a7a7;
+    opacity: 0.3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.FollowBtn.clicked {
+    background-color: rgba(26, 168, 255, 0.1);
+    border: solid 2px #1aa8ff;
+    opacity: 1;
+}
+
+.FollowBtn.clicked:hover {
+    border: solid 2px #1aa8ff;
+}
+
+.FollowBtn.clicked div:first-child {
+    background: #1aa8ff;
+    transform: rotate(-44deg) translate(1px, 2px);
+    width: 12px;
+}
+
+.FollowBtn.clicked div:last-child {
+    background: #1aa8ff;
+    transform: rotate(-44deg) translate(-4px, 0px);
+    height: 6px;
+}
+
+.FollowBtn.clicked:hover div:first-child {
+    background: #1aa8ff;
+}
+
+.FollowBtn.clicked:hover div:last-child {
+    background: #1aa8ff;
+}
+
+.FollowBtn:hover {
+    border: 1px solid #a7a7a7;
+    opacity: 1;
+}
+
+.FollowBtn:hover div:first-child {
+    background: #a7a7a7;
+    transform: rotate(-44deg) translate(1px, 2px);
+    width: 12px;
+}
+
+.FollowBtn:hover div:last-child {
+    background: #a7a7a7;
+    transform: rotate(-44deg) translate(-4px, 0px);
+    height: 6px;
+}
+
+.FollowBtn div:first-child {
+    width: 11px;
+    height: 2px;
+    background: #a7a7a7;
+    position: absolute;
+    transition: 0.2s all;
+}
+
+.FollowBtn div:last-child {
+    width: 2px;
+    height: 11px;
+    background: #a7a7a7;
+    position: absolute;
+    transition: 0.2s all;
+}

@@ -35,3 +35,18 @@
   margin-right: 6px;
   width: 17px;
 }
+
+@media (max-width: 713px) {
+  .SectionName {
+      text-align: center;
+  }
+  .Manage, .YourGroups {
+      justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .SectionName {
+      text-align: left;
+  }
+}

@@ -19,6 +19,13 @@
     margin-bottom: 100px;
 }
 
+.StarIcon {
+    position: relative;
+    top: 3.5px;
+    margin-right: 6px;
+    width: 17px;
+  }
+
 .SectionName {
     color: #3e3f51;
     font-size: 20px;
@@ -27,4 +34,19 @@
     margin: 0;
     padding: 0;
     margin-bottom: 24px;
+}
+
+@media (max-width: 713px) {
+    .SectionName {
+        text-align: center;
+    }
+    .Upcoming, .MayLike {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .SectionName {
+        text-align: left;
+    }
 }

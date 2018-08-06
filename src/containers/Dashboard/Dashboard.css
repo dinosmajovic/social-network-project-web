@@ -4,10 +4,39 @@
     width: calc(100% - 368px - 368px);
     display: flex;
     justify-content: center;
+    margin-left: 368px;
 }
 
 .DashboardContainer {
     display: flex;
     background: #f3f7fa;
     padding-top: 40px;
+}
+
+@media (max-width: 1300px) {
+    .Dashboard {
+        width: calc(100% - 368px);
+        margin-right: 25px;
+    }
+}
+
+@media (max-width: 955px) {
+    .Dashboard {
+        width: calc(100% - 128px);
+        margin-left: 128px;
+    }
+}
+
+@media (max-width: 500px) {
+    .DesktopNavigation {
+        display: none;
+    }
+    .Dashboard {
+        width: 100%;
+        margin: 0;
+        padding: 8px;
+    }
+    .DashboardContainer {
+        padding-top: 16px;
+    }
 }

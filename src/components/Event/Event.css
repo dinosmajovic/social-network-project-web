@@ -47,3 +47,18 @@
   line-height: 16px;
   margin-top: auto;
 }
+
+@media (max-width: 705px) {
+  .Event {
+    width: 80%;
+  }
+  .Event:nth-child(odd) {
+    margin-right: 0px;
+  }
+}
+
+@media (max-width: 500px) {
+  .Event {
+    width: 100%;
+  }
+}

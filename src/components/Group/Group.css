@@ -47,3 +47,15 @@
   font-size: 12px;
   line-height: 16px;
 }
+
+@media (max-width: 705px) {
+  .Group:nth-child(odd) {
+    margin-right: 0px;
+  }
+}
+
+@media (max-width: 500px) {
+  .Group {
+    width: 100%;
+  }
+}

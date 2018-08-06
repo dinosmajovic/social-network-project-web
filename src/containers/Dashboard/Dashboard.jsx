@@ -13,14 +13,14 @@ class Dashboard extends Component {
     render() {
         return (
             <div className={classes.DashboardContainer}>
-                <DashboardNavigation />
-
+                <div className={classes.DesktopNavigation}>
+                    <DashboardNavigation />
+                </div>
                 <div className={classes.Dashboard}>
                     <Route exact path="/" component={NewsFeed} />
                     <Route path="/events" component={Events} />
                     <Route path="/groups" component={Groups} />
                 </div>
-
                 <PeopleToFollow />
             </div>
         );

@@ -4,16 +4,20 @@
 
 .DashboardNavigationContainer {
     width: 368px;
-    height: 100%;
+    position: fixed;
+    left: 0;
+    height: 100vh;
     background: #f3f7fa;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    z-index: 9999;
 }
 
 .DashboardNavigation {
     width: 304px;
+    /* width: 81%; */
     height: auto;
     border-radius: 3px;
     margin-left: 8px;
@@ -33,7 +37,46 @@
     position: relative;
     padding-left: 16px;
     display: flex;
+    z-index: 9999;
     align-items: center;
+}
+
+.Navlink .tooltip {
+    display: none;
+    visibility: hidden;
+    width: 115px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+    background-color: #3e3f51;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 2px 0;
+    height: 35px;
+    line-height: 30px;
+    position: absolute;
+    z-index: 6000;
+    top: 13px;
+    left: 120%;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all .2s;
+}
+
+.Navlink .tooltip::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 100%; /* To the left of the tooltip */
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #3e3f51 transparent transparent;
+}
+
+.Navlink:hover .tooltip {
+    opacity: 1;
+    transform: translateX(0px);
+    visibility: visible;
 }
 
 .Navlink:hover {
@@ -127,4 +170,68 @@
 
 .AddIcon {
     margin-right: 2px;
+}
+
+@media (max-width: 955px) {
+    .DashboardNavigationContainer {
+        width: 128px;
+    }
+    .DashboardNavigation {
+        width: 64px;
+    }
+    .Navlink span {
+        display: none;
+    }
+    .Navlink .tooltip {
+        display: block;
+    }
+    .NavigationIcon {
+        position: relative;
+        left: 8px;
+    }
+    .CreateEventBtn,
+    .CreateGroupBtn {
+        width: 64px;
+        height: 44px;
+    }
+    .AddIcon {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .DashboardNavigationContainer {
+        width: 100%;
+        height: auto;
+        position: relative;
+        margin-top: 16px;
+        background: #fff;
+    }
+    .DashboardNavigation {
+        width: 100%;
+        margin-left: 0;
+    }
+    .Navlink {
+        height: 40px;
+    }
+    .Navlink span {
+        display: block;
+    }
+    .Navlink .tooltip {
+        display: none;
+    }
+    .NavigationIcon {
+        position: relative;
+        left: 0px;
+    }
+    .CreateEventBtn,
+    .CreateGroupBtn {
+        width: 100%;
+        height: 30px;
+        margin-left: 0;
+        margin-top: 8px;
+    }
+    .AddIcon {
+        display: block;
+    }
 }

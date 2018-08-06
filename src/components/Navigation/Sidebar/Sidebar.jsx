@@ -6,6 +6,7 @@ import Logo from '../Logo/Logo.jsx';
 import Searchbar from '../Searchbar/Searchbar.jsx';
 import UserSettingsAvatar from '../UserSettingsAvatar/UserSettingsAvatar.jsx';
 import UserSettings from '../../UI/UserSettings/UserSettings';
+import DashboardNavigation from '../../DashboardNavigation/DashboardNavigation';
 
 class Sidebar extends Component {
     render() {
@@ -21,8 +22,8 @@ class Sidebar extends Component {
                 <div className={attachedClasses.join(' ')}>
                     <Logo />
                     <Searchbar />
-                    {/* <UserSettingsAvatar/> */}
-                    <UserSettings clicked={this.props.closed}/>
+                    <DashboardNavigation clicked={this.props.closed} />
+                    <UserSettings clicked={this.props.closed} />
                 </div>
             </div>
         );

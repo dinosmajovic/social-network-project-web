@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import classes from './Events.css'
+import Ionicon from 'react-ionicons'
 
 import Event from '../../components/Event/Event.jsx'
 
@@ -45,7 +46,10 @@ class Events extends Component {
         ))
         return (
             <div className={classes.Events}>
-                <h1 className={classes.SectionName}>Upcoming Events</h1>
+                <h1 className={classes.SectionName}>
+                    <Ionicon className={classes.StarIcon} icon="md-star" size="10px" color="#333" />
+                    Upcoming Events
+                </h1>
                 <div className={classes.Upcoming}>
                     {upcomingEventsToReturn}
                 </div>   

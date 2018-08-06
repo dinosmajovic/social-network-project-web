@@ -5,7 +5,21 @@ import FollowIcon from './icons/follow.svg';
 import CheckIcon from './icons/check.svg';
 
 class PersonToFollow extends Component {
+    state = {
+        followed: false
+    }
+
+    followUser = () => {
+        this.setState({
+            followed: true
+        })
+    }
+
     render() {
+        const btnClasses = [classes.FollowBtn];
+        if (this.state.followed) {
+            btnClasses.push(classes.clicked)
+        }
         return (
             <li className={classes.PersonToFollow}>
                 <span className={classes.Avatar}></span>
@@ -13,7 +27,10 @@ class PersonToFollow extends Component {
                     <h4 className={classes.Name}>{this.props.name}</h4>
                     <p className={classes.Mutual}>{this.props.mutual} mutual friends</p>
                 </div>
-                <img className={classes.Btn} src={FollowIcon} alt=""/>
+                <div onClick={this.followUser} className={btnClasses.join(" ")}>
+                    <div></div>
+                    <div></div>
+                </div>
             </li>
         );
     }
