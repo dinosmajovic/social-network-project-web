@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import classes from './Events.css'
 import Ionicon from 'react-ionicons'
+import {Route, withRouter} from 'react-router-dom';
 
 import Event from '../../components/Event/Event.jsx'
+import CreateEvent from '../../components/CreateEvent/CreateEvent';
 
 class Events extends Component {
     render() {
@@ -46,17 +48,20 @@ class Events extends Component {
         ))
         return (
             <div className={classes.Events}>
-                <h1 className={classes.SectionName}>
-                    <Ionicon className={classes.StarIcon} icon="md-star" size="10px" color="#333" />
-                    Upcoming Events
-                </h1>
-                <div className={classes.Upcoming}>
-                    {upcomingEventsToReturn}
-                </div>   
-                <h1 className={classes.SectionName}>Events you may like</h1>
-                <div className={classes.MayLike}>
-                    {eventsYouMayLikeToReturn}
-                </div>
+                <Route exact path="/events" render={() => [
+                    <h1 className={classes.SectionName}>
+                        <Ionicon className={classes.StarIcon} icon="md-star" size="10px" color="#333" />
+                        Upcoming Events
+                    </h1>,
+                    <div className={classes.Upcoming}>
+                        {upcomingEventsToReturn}
+                    </div>  , 
+                    <h1 className={classes.SectionName}>Events you may like</h1>,
+                    <div className={classes.MayLike}>
+                        {eventsYouMayLikeToReturn}
+                    </div>
+                ]} />
+                <Route path="/events/create" component={CreateEvent} />
             </div>
         );
     }

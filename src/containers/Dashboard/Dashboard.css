@@ -4,13 +4,14 @@
     width: calc(100% - 368px - 368px);
     display: flex;
     justify-content: center;
-    margin-left: 368px;
 }
 
 .DashboardContainer {
     display: flex;
     background: #f3f7fa;
     padding-top: 40px;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 @media (max-width: 1300px) {
@@ -23,7 +24,6 @@
 @media (max-width: 955px) {
     .Dashboard {
         width: calc(100% - 128px);
-        margin-left: 128px;
     }
 }
 

@@ -4,20 +4,19 @@
 
 .DashboardNavigationContainer {
     width: 368px;
-    position: fixed;
+    position: sticky;
     left: 0;
-    height: 100vh;
+    height: auto;
     background: #f3f7fa;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    z-index: 9999;
+    z-index: 7500;
 }
 
 .DashboardNavigation {
     width: 304px;
-    /* width: 81%; */
     height: auto;
     border-radius: 3px;
     margin-left: 8px;
@@ -37,7 +36,7 @@
     position: relative;
     padding-left: 16px;
     display: flex;
-    z-index: 9999;
+    z-index: 8001;
     align-items: center;
 }
 
@@ -66,7 +65,7 @@
     content: " ";
     position: absolute;
     top: 50%;
-    right: 100%; /* To the left of the tooltip */
+    right: 100%;
     margin-top: -5px;
     border-width: 5px;
     border-style: solid;
@@ -140,6 +139,8 @@
     font-weight: 400;
     cursor: pointer;
     outline: none;
+    text-decoration: none;
+    text-align: center;
 }
 
 .CreateEventBtn:hover {
@@ -162,6 +163,8 @@
     font-weight: 400;
     cursor: pointer;
     outline: none;
+    text-decoration: none;
+    text-align: center;
 }
 
 .CreateGroupBtn:hover {

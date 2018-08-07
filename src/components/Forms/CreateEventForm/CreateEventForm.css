@@ -1,0 +1,68 @@
+.CreateEventForm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+}
+
+.CreateEventForm div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.CreateEventForm input {
+    display: block;
+    width: 240px;
+    align-self: center;
+    margin-top: 8px;
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 16px;
+    padding: 8px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #d8d8d8;
+    box-sizing: border-box;
+    background: transparent;
+}
+
+.CreateEventForm input:focus {
+    border-bottom: 1px solid #ff552c;
+}
+
+.CreateEventForm label {
+    margin-left: 5%;
+    color: #3e3f51;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.CreateEventForm button {
+    width: 200px;
+    height: 32px;
+    border-radius: 3px;
+    background: #ff552c;
+    border: 0px;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.SubmitBtn {
+    margin-right: 1%;
+}
+
+.CreateEventForm .CancelBtn {
+    margin-right: 8px;
+    margin-left: auto;
+    background: #eee;
+    color: #444;
+    width: 100px;
+}
+
+@media (max-width: 720px) {
+    .CreateEventForm input {
+        align-self: flex-start;
+        margin-left: 5%;
+    }
+}

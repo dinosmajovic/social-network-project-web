@@ -19,7 +19,7 @@ class NewsFeed extends Component {
                 photo: "http://www.pethealthnetwork.com/sites/default/files/why-does-my-vet-want-a-poop-sample-186258997.jpg",
                 likesNum: 25
             }
-        ]
+        ];
 
         let postsToReturn = posts.map(post => (
             <Post 
@@ -28,7 +28,7 @@ class NewsFeed extends Component {
                 postText={post.postText} 
                 timeStamp={post.timeStamp}
                 likesNum={post.likesNum} />
-        ))
+        ));
 
         return (
             <div className={classes.NewsFeed}>

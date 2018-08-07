@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom'
+import { withRouter, Redirect } from 'react-router-dom'
 import classes from './Landing.css';
 
 import RenderIf from '../../Helpers/RenderIf';
@@ -9,23 +9,14 @@ import { registerUser, loginUser } from '../../actions/authActions';
 
 import Logo from '../../assets/images/logo-icon.svg';
 import Image from '../../assets/images/image.png';
+import LoginForm from '../../components/Forms/LoginForm/LoginForm';
+import RegisterForm from '../../components/Forms/RegisterForm/RegisterForm';
 
 class Landing extends Component {
     state = {
-        username: '',
-        rusername: '',
-        password: '',
-        rpassword: '',
         errors: null,
-        blank: [1,2,3],
         registerShow: false
     } 
-
-    onChange = e => {
-        this.setState({
-            [e.target.name]: e.target.value
-        })
-    }
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.errors) {
@@ -33,74 +24,33 @@ class Landing extends Component {
         }
     }
 
-    onLoginFormSubmit = (e) => {
-        e.preventDefault();
-
-        const userData = {
-            "username": this.state.username,
-            "password": this.state.password
-        }
-
-        this.props.loginUser(userData)
+    onLoginFormSubmit = values => {
+        this.props.loginUser(values)
     }
 
-    onRegisterFormSubmit = (e) => {
-        e.preventDefault();
-
-        const userData = {
-            "username": this.state.rusername,
-            "password": this.state.rpassword
-        }
-
-        this.props.registerUser(userData);
+    onRegisterFormSubmit = values => {
+        this.props.registerUser(values);
     }
 
-    showRegister = () => {
+    toggleRegister = () => {
         this.setState({
-            registerShow: true
-        })
-    }
-
-    showLogin = () => {
-        this.setState({
-            registerShow: false
+            registerShow: !this.state.registerShow
         })
     }
 
     render() {
         const { errors } = this.state;
-        let showErrors;
 
-        if (this.state.errors) {
-            showErrors = Object.keys(this.state.errors).map(error => {
-                this.state.errors[error].map(err => <p>{err}</p>)
-            })
-        }
         return (
             <div className={classes.Landing}>
+                <Redirect to="/" />
                 <RenderIf condition={!this.state.registerShow}>
                     <div className={classes.LoginContainer}>
                         <img className={classes.Logo} src={Logo} alt="Mopsters"/>
                         <h2>Welcome to</h2>
                         <h1>mopsters</h1>
-                        <form onSubmit={this.onLoginFormSubmit}>
-                            <label>Username</label>
-                            <input 
-                                type="text" 
-                                placeholder="exampleuser"
-                                name="username"
-                                value={this.state.username}
-                                onChange={this.onChange} />
-                            <label>Password</label>
-                            <input 
-                                type="password" 
-                                placeholder="••••••••••••" 
-                                name="password"
-                                value={this.state.password}
-                                onChange={this.onChange} />
-                            <button type="submit" className={classes.SubmitBtn}>Login</button>
-                        </form>
-                        <p>Don't have an account? <span onClick={this.showRegister}>Sign Up</span></p>
+                        <LoginForm onSubmit={this.onLoginFormSubmit} />
+                        <p>Don't have an account? <span onClick={this.toggleRegister}>Sign Up</span></p>
                     </div>
                 </RenderIf>
                 <RenderIf condition={this.state.registerShow}>
@@ -108,25 +58,8 @@ class Landing extends Component {
                         <img className={classes.Logo} src={Logo} alt="Mopsters"/>
                         <h2>Register as a</h2>
                         <h1>mopster</h1>
-                        <form onSubmit={this.onRegisterFormSubmit}>
-                            <label>Username</label>
-                            <input 
-                                type="text" 
-                                placeholder="jhondoe"
-                                name="rusername"
-                                value={this.state.rusername}
-                                onChange={this.onChange} />
-                            <label>Password</label>
-                            <input 
-                                type="password" 
-                                placeholder="••••••••••••" 
-                                name="rpassword"
-                                value={this.state.rpassword}
-                                onChange={this.onChange} />
-                            <button type="submit" className={classes.SubmitBtn}>Register</button>
-                        </form>
-                        {showErrors}
-                        <p>Already have an account? <span onClick={this.showLogin}>Login</span></p>
+                        <RegisterForm onSubmit={this.onRegisterFormSubmit} />
+                        <p>Already have an account? <span onClick={this.toggleRegister}>Login</span></p>
                     </div>
                 </RenderIf>
                 <div className={classes.ImageContainer}>

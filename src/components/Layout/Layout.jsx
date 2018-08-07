@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import classes from './Layout.css';
 
 import RenderIf from '../../Helpers/RenderIf.jsx'
 
@@ -35,7 +36,7 @@ class Layout extends Component {
                         open={this.state.showSidebar} 
                         closed={this.sidebarClosedHandler} />
                 </RenderIf>
-                <main style={{marginTop: margin}}>
+                <main className={classes.Content} style={{marginTop: margin}}>
                     {this.props.children}
                 </main>
             </div>

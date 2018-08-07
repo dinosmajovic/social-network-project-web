@@ -1,0 +1,35 @@
+.RegisterForm input {
+    display: block;
+    width: 90%;
+    max-width: 240px;
+    margin-top: 14px;
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 16px;
+    padding: 8px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #d8d8d8;
+    box-sizing: border-box;
+}
+
+.RegisterForm input:focus {
+    border-bottom: 1px solid #1aa8ff;
+}
+
+.RegisterForm label {
+    color: #3e3f51;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.RegisterForm button {
+    width: 240px;
+    height: 32px;
+    border-radius: 3px;
+    background: #1aa8ff;
+    border: 0px;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+}

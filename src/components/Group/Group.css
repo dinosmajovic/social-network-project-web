@@ -49,6 +49,9 @@
 }
 
 @media (max-width: 705px) {
+  .Group {
+    width: 80%;
+  }
   .Group:nth-child(odd) {
     margin-right: 0px;
   }

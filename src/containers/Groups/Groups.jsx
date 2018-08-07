@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import classes from './Groups.css'
 import Group from '../../components/Group/Group';
+import {Route} from 'react-router-dom';
 
 import Ionicon from 'react-ionicons'
+import CreateGroup from '../../components/CreateGroup/CreateGroup';
+
 
 class Groups extends Component {
     render() {
@@ -51,17 +54,20 @@ class Groups extends Component {
         ))
         return (
             <div className={classes.Groups}>
-                <h1 className={classes.SectionName}>
-                    <Ionicon className={classes.StarIcon} icon="md-star" size="10px" color="#333" />
-                    Groups You Manage
-                </h1>
-                <div className={classes.Manage}>
-                    {manageGroupsToReturn}
-                </div>   
-                <h1 className={classes.SectionName}>Your Groups</h1>
-                <div className={classes.YourGroups}>
-                    {yourGroupsToReturn}
-                </div>
+                <Route exact path="/groups" render={() => [
+                    <h1 className={classes.SectionName}>
+                        <Ionicon className={classes.StarIcon} icon="md-star" size="10px" color="#333" />
+                        Groups You Manage
+                    </h1>,
+                    <div className={classes.Manage}>
+                        {manageGroupsToReturn}
+                    </div>,   
+                    <h1 className={classes.SectionName}>Your Groups</h1>,
+                    <div className={classes.YourGroups}>
+                        {yourGroupsToReturn}
+                    </div>
+                ]} />
+                <Route path="/groups/create" component={CreateGroup} />
             </div>
         );
     }

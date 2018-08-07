@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classes from './Dashboard.css';
 
-import {Link, Route} from 'react-router-dom'
+import {Link, Route, withRouter} from 'react-router-dom'
 import DashboardNavigation from '../../components/DashboardNavigation/DashboardNavigation';
 import PeopleToFollow from '../../components/PeopleToFollow/PeopleToFollow';
 
@@ -27,4 +27,4 @@ class Dashboard extends Component {
     }
 }
 
-export default Dashboard;
+export default withRouter(Dashboard);

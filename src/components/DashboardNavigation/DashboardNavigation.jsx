@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {NavLink, withRouter} from 'react-router-dom'
+import {NavLink, Link, withRouter} from 'react-router-dom'
 import classes from './DashboardNavigation.css'
 
 import Ionicon from 'react-ionicons';
@@ -11,7 +11,6 @@ import RenderIf from '../../Helpers/RenderIf';
 
 class DashboardNavigation extends Component {
   render() {
-    console.log(this.props.location.pathname)
     return (
       <div className={classes.DashboardNavigationContainer}>
         <div className={classes.DashboardNavigation}>
@@ -26,10 +25,9 @@ class DashboardNavigation extends Component {
                   <span>
                     News Feed
                   </span>
-                </NavLink>
+            </NavLink>
             <NavLink
-                onClick={this.props.clicked}
-                exact 
+                onClick={this.props.clicked} 
                 to="/events"
                 className={classes.Navlink}
                 activeClassName={classes.selectedEvents}>
@@ -38,10 +36,9 @@ class DashboardNavigation extends Component {
                   <span>
                     Events
                   </span>
-                </NavLink>
+            </NavLink>
             <NavLink
                 onClick={this.props.clicked}
-                exact 
                 to="/groups"
                 className={classes.Navlink}
                 activeClassName={classes.selectedGroups}>
@@ -50,27 +47,27 @@ class DashboardNavigation extends Component {
                   <span>
                     Groups
                   </span>
-                </NavLink>
+            </NavLink>
         </div>
         <RenderIf condition={this.props.location.pathname == "/events"}>
-          <button className={classes.CreateEventBtn}>
+          <Link to="/events/create" className={classes.CreateEventBtn} onClick={this.props.clicked}>
             <Ionicon  
               className={classes.AddIcon}
               icon="md-add" 
               color="#fff" 
               fontSize="12px" />
             Create Event
-          </button>
+          </Link>
         </RenderIf>
         <RenderIf condition={this.props.location.pathname == "/groups"}>
-          <button className={classes.CreateGroupBtn}>
+          <Link to="/groups/create" className={classes.CreateGroupBtn} onClick={this.props.clicked}>
             <Ionicon  
               className={classes.AddIcon}
               icon="md-add" 
               color="#fff" 
               fontSize="12px" />
             Create Group
-          </button>
+          </Link>
         </RenderIf>
       </div>
     )

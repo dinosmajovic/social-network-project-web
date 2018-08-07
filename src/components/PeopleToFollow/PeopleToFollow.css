@@ -1,10 +1,8 @@
 .PeopleToFollowContainer {
     width: 368px;
     height: auto;
-    position: fixed;
+    position: sticky;
     right: 0;
-    display: flex;
-    justify-content: center;
 }
 
 .PeopleToFollow {
@@ -13,7 +11,10 @@
     height: auto;
     border-radius: 3px;
     border: solid 1px #e4e9ef;
-    margin-right: 8px;
+    /* margin-right: 8px; */
+    margin: 0 auto;
+    position: relative;
+    right: 8px;
 }
 
 .PeopleToFollow ul {
