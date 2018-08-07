@@ -1,0 +1,80 @@
+.CreateGroupForm {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+}
+
+.CreateGroupForm div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.CreateGroupForm input {
+  display: block;
+  width: 240px;
+  align-self: center;
+  margin-top: 8px;
+  margin-bottom: 24px;
+  font-size: 16px;
+  line-height: 16px;
+  padding: 8px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #d8d8d8;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.CreateGroupForm input:focus {
+  border-bottom: 1px solid #2ddb60;
+}
+
+.CreateGroupForm label {
+  margin-left: 5%;
+  color: #3e3f51;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.CreateGroupForm footer {
+  width: 100%;
+  display: flex;
+  padding: 0 1%;
+}
+
+.SubmitBtn {
+  width: 200px;
+  height: 32px;
+  border-radius: 3px;
+  background: #2ddb60;
+  border: 0px;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+
+.SubmitBtn:hover {
+  background: #21ae4a;
+}
+
+.CancelBtn {
+  height: 32px;
+  margin-right: 1%;
+  background: #eee;
+  border-radius: 3px;
+  border: 0px;
+  color: #444;
+  width: 100px;
+  cursor: pointer;
+  margin-left: auto;
+  outline: none;
+}
+
+@media (max-width: 720px) {
+  .CreateGroupForm input {
+      align-self: flex-start;
+      margin-left: 5%;
+  }
+}

@@ -57,16 +57,17 @@ class CreateEventForm extends Component {
                     placeholder="Add a time?" 
                     component={this.renderField} 
                     type="text" />
-                
-                <button className={classes.CancelBtn} onClick={this.cancelEvent} >Cancel</button>
-                <button className={classes.SubmitBtn} type="submit">Create event</button>
+                <footer>
+                    <button className={classes.CancelBtn} onClick={this.cancelEvent} >Cancel</button>
+                    <button className={classes.SubmitBtn} type="submit">Create event</button>
+                </footer>
             </form>
         );
     }
 }
 
 CreateEventForm = reduxForm({
-    form: 'login'
+    form: 'createEvent'
 })(CreateEventForm);
 
 export default withRouter(CreateEventForm);

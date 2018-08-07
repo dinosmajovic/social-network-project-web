@@ -37,7 +37,13 @@
     line-height: 16px;
 }
 
-.CreateEventForm button {
+.CreateEventForm footer {
+    width: 100%;
+    display: flex;
+    padding: 0 1%;
+}
+
+.SubmitBtn {
     width: 200px;
     height: 32px;
     border-radius: 3px;
@@ -46,18 +52,24 @@
     outline: none;
     color: #fff;
     cursor: pointer;
+    outline: none;
 }
 
-.SubmitBtn {
+.SubmitBtn:hover {
+    background: #ff3c0e;
+}
+
+.CancelBtn {
+    height: 32px;
     margin-right: 1%;
-}
-
-.CreateEventForm .CancelBtn {
-    margin-right: 8px;
-    margin-left: auto;
     background: #eee;
+    border-radius: 3px;
+    border: 0px;
     color: #444;
     width: 100px;
+    cursor: pointer;
+    margin-left: auto;
+    outline: none;
 }
 
 @media (max-width: 720px) {

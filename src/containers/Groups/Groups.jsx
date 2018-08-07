@@ -6,7 +6,6 @@ import {Route} from 'react-router-dom';
 import Ionicon from 'react-ionicons'
 import CreateGroup from '../../components/CreateGroup/CreateGroup';
 
-
 class Groups extends Component {
     render() {
         const manageGroups = [

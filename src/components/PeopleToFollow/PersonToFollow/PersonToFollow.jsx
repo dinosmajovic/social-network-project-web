@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import classes from './PersonToFollow.css';
 
-import FollowIcon from './icons/follow.svg';
-import CheckIcon from './icons/check.svg';
-
 class PersonToFollow extends Component {
     state = {
         followed: false

@@ -1,0 +1,8 @@
+.CreateGroup {
+  width: 100%;
+  background: #fff;
+  padding: 24px 16px;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  border: solid 1px #e4e9ef;
+}
