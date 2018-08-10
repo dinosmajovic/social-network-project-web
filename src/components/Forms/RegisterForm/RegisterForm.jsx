@@ -21,13 +21,19 @@ class RegisterForm extends Component {
                     placeholder="exampleuser" 
                     component={this.renderField} 
                     type="text" />
+                <Field  
+                    name="email" 
+                    label="Email" 
+                    placeholder="example@email.com" 
+                    component={this.renderField}
+                    type="email" />
                 <Field 
                     name="password" 
                     label="Password" 
                     placeholder="••••••••••••" 
                     component={this.renderField} 
                     type="password" />
-                <button type="submit">Register</button>
+                <button type="submit">Sign Up</button>
             </form>
         );
     }
