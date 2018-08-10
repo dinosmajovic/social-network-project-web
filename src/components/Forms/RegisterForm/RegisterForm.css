@@ -2,7 +2,7 @@
     display: block;
     width: 90%;
     max-width: 240px;
-    margin-top: 14px;
+    margin-top: 10px;
     margin-bottom: 24px;
     font-size: 16px;
     line-height: 16px;
@@ -15,6 +15,10 @@
 
 .RegisterForm input:focus {
     border-bottom: 1px solid #1aa8ff;
+}
+
+.RegisterForm input::-webkit-input-placeholder {
+    color: #a7a7a7;
 }
 
 .RegisterForm label {
