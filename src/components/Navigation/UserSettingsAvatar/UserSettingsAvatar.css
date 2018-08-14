@@ -5,14 +5,14 @@
     justify-content: flex-end;
 }
 
-.UserIcon {
-    height: 36px;
-    width: 36px;
-    border-radius: 50%;
-    background: #f3f7fa;
+.IconContainer {
     cursor: pointer;
 }
 
+.Username {
+    margin-right: 16px;
+    cursor: pointer;
+}
 
 @media (max-width: 500px) {
     .UserSettingsAvatar {
@@ -21,6 +21,7 @@
         height: auto;
         width: 100%;
     }
+    
     .UserIcon {
         height: auto;
         width: 40%;

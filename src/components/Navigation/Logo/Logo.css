@@ -3,12 +3,13 @@
     margin-left: 40px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
-.Logo img {
+.LogoLink {
     height: 100%;
-    margin: 0 auto;
 }
+
 
 @media (max-width: 499px) {
     .Logo {

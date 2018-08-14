@@ -10,6 +10,35 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
+}
+
+.PostOptions {
+    background: #fff;
+    position: absolute;
+    right: 50px;
+    top: 32px;
+    animation: fadeInRight .15s ease-in;
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10px)
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.PostOptions svg {
+    margin-right: 4px;
+    cursor: pointer;
+}
+
+.PostOptions svg:last-child {
+    margin-right: 10px; 
 }
 
 .Post header {
@@ -46,6 +75,8 @@
 .MoreIcon {
     margin-left: auto;
     cursor: pointer;
+    padding: 8px;
+    z-index: 2;
 }
 
 .PostText {
@@ -76,6 +107,7 @@
 .LikeContainer {
     margin-left: auto;
 }
+
 
 .LikeContainer img {
     height: 16px;

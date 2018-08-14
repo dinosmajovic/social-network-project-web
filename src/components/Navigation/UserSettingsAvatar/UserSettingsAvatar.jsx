@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import classes from './UserSettingsAvatar.css';
 import RenderIf from '../../../Helpers/RenderIf';
 import UserSettings from '../../UI/UserSettings/UserSettings.jsx';
+import UserIcon from '../../UI/UserIcon/UserIcon';
 
 class UserSettingsAvatar extends Component {
     state = {
@@ -9,15 +12,22 @@ class UserSettingsAvatar extends Component {
     }
 
     toggleUserSettings = () => {
-        this.setState(prevState => {
-            return {userSettings: !prevState.userSettings}    
+        this.setState({
+            userSettings: !this.state.userSettings
         })
+    }
+
+    goToProfile = () => {
+        this.props.history.push('/user/' + this.props.user.nameid)
     }
 
     render() {
         return [
             <div className={classes.UserSettingsAvatar} >
-                <div className={classes.UserIcon} onClick={this.toggleUserSettings}></div>
+                <span className={classes.Username} onClick={this.goToProfile} >{this.props.user.unique_name}</span>
+                <div className={classes.IconContainer} onClick={this.toggleUserSettings} >
+                    <UserIcon image={this.props.user.actort} width="40px" height="40px" />
+                </div>
             </div>,
             <RenderIf condition={this.state.userSettings}>
                 <UserSettings />
@@ -26,4 +36,8 @@ class UserSettingsAvatar extends Component {
     }
 };
 
-export default UserSettingsAvatar;
+const mapStateToProps = state => ({
+    user: state.auth.user
+})
+
+export default connect(mapStateToProps, {})(withRouter(UserSettingsAvatar));
