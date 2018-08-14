@@ -1,0 +1,8 @@
+.Modal {
+  position: fixed;
+  width: 30%;
+  height: 40vh;
+  background: pink;
+  margin: 0 auto;
+  z-index: 9999;
+}

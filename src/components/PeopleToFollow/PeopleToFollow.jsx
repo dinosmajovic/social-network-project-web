@@ -5,17 +5,17 @@ import PersonToFollow from './PersonToFollow/PersonToFollow';
 class PeopleToFollow extends Component {
     render() {
         const people = [
-            {name: "Muriz Suljevic", mutual: "2"},
-            {name: "Vincent Guerrero", mutual: "5"},
-            {name: "Robert Robinson", mutual: "2"},
-            {name: "Jullie Gibson", mutual: "43"},
-            {name: "Cristopher Hopkins", mutual: "1"},
+            { name: "Muriz Suljevic", mutual: "2" },
+            { name: "Vincent Guerrero", mutual: "5" },
+            { name: "Robert Robinson", mutual: "2" },
+            { name: "Jullie Gibson", mutual: "43" },
+            { name: "Cristopher Hopkins", mutual: "1" },
         ]
 
         let peopleList = people.map(person => (
             <PersonToFollow name={person.name} mutual={person.mutual} />
         ))
-        
+
         return (
             <div className={classes.PeopleToFollowContainer} >
                 <div className={classes.PeopleToFollow}>

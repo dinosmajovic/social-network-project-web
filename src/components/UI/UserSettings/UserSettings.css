@@ -1,6 +1,6 @@
 .UserSettings {
     position: fixed;
-    top: 60px;
+    top: 82px;
     right: 40px;
     width: 200px;
     height: 240px;
@@ -11,6 +11,18 @@
     justify-content: flex-end;
     align-items: center;
     flex-direction: column;
+    user-select: none;
+}
+
+.UserSettings::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;  /* At the top of the tooltip */
+    right: 13px;
+    margin-left: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
 }
 
 @media (max-width: 500px) {
@@ -50,12 +62,9 @@
     cursor: pointer;  
 }
 
-.UserIcon {
-    width: 100px;
-    height: 100px;
+.IconContainer {
     margin-bottom: 5px;
-    border-radius: 50%;
-    background: #f3f7fa;
+    color: pointer;
 }
 
 .Username {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter, Route } from 'react-router-dom'
+import { withRouter, Route, Redirect } from 'react-router-dom'
 
 import { connect } from 'react-redux';
 import { registerUser, loginUser } from '../../actions/authActions';
@@ -21,6 +21,7 @@ class Landing extends Component {
     render() {
         return (
             <div>
+                <Redirect to="/" />
                 <Route exact path="/" component={Login} />
                 <Route exact path="/register" component={Register} />
             </div>
