@@ -1,8 +1,9 @@
 import axios from 'axios';
 import { GET_USER, GET_ERRORS, USER_POSTS } from './types';
+import {API} from '../constants';
 
 export const getUser = (userId) => dispatch => {
-  axios.get('http://mentorship-api.ministryofprogramming.com/api/users/' + userId, {
+  axios.get(API + '/users/' + userId, {
     headers: {
       'Authorization': 'Bearer ' + localStorage.jwtToken
     }
@@ -21,7 +22,7 @@ export const getUser = (userId) => dispatch => {
 }
 
 export const getUserPosts = (userId) => dispatch => {
-  axios.get('http://mentorship-api.ministryofprogramming.com/api/users/' + userId + '/posts', {
+  axios.get(API + '/users/' + userId + '/posts', {
     headers: {
       'Authorization': 'Bearer ' + localStorage.jwtToken
     }
