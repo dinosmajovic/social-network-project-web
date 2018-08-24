@@ -79,12 +79,44 @@
     z-index: 2;
 }
 
+.Post main {
+    position: relative;
+}
+
 .PostText {
     color: #3e3f51;
     font-size: 14px;
     line-height: 1.71;
     margin-top: 24px;
     margin-bottom: 40px;
+}
+
+.EditPostArea {
+    color: #3e3f51;
+    font-size: 14px;
+    line-height: 1.71;
+    margin-top: 24px;
+    margin-bottom: 20px;
+    width: 100%;
+    font-family: 'Roboto';
+    resize: none;
+    outline: none;
+    background: #F8F8F8;
+    border: solid 1px #e4e9ef;
+    border-radius: 3px;
+    padding: 5px;
+    padding-right: 23px;
+}
+
+.CloseEdit {
+    position: absolute;
+    top: 24px;
+    right: 0px;
+    cursor: pointer;
+}
+
+.EditPostArea::-webkit-input-placeholder {
+    font-family: 'Roboto';
 }
 
 .Image {

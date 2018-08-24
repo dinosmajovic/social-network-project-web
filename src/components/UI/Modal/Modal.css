@@ -1,8 +1,11 @@
 .Modal {
   position: fixed;
-  width: 30%;
-  height: 40vh;
-  background: pink;
+  width: 40%;
+  height: auto;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  border: solid 1px #e4e9ef;
   margin: 0 auto;
   z-index: 9999;
 }

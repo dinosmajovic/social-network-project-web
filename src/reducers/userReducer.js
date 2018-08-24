@@ -1,4 +1,5 @@
 import { GET_USER, USER_POSTS } from '../actions/types';
+import _ from 'lodash';
 
 const initialState = {
     userPayload: {},
@@ -10,7 +11,7 @@ export default function (state = initialState, action) {
         case USER_POSTS:
             return {
                 ...state,
-                userPosts: action.payload
+                userPosts: _.reverse(action.payload)
             }
         case GET_USER:
             return {
