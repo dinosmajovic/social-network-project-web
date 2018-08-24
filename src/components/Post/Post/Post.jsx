@@ -4,6 +4,7 @@ import RenderIf from '../../../Helpers/RenderIf';
 
 import { connect } from 'react-redux';
 import Moment from 'react-moment';
+import { editPost } from '../../../actions/postActions';
 
 import MoreIcon from './icons/more.svg';
 import HeartIcon from './icons/big-heart.svg';
@@ -11,13 +12,35 @@ import Ionicon from 'react-ionicons';
 
 class Post extends Component {
     state = {
-        postOptions: false
+        postOptions: false,
+        editPost: false,
+        editPostText: this.props.postText
+    }
+
+    handleInputChange = e => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
     }
 
     togglePostOptions = () => {
         this.setState({
             postOptions: !this.state.postOptions
         })
+    }
+
+    toggleEditPost = () => {
+        this.setState({
+            editPost: !this.state.editPost,
+            editPostText: this.props.postText
+        })
+    }
+
+    editPostHandler = e => {
+        if (e.key === 'Enter') {
+            this.props.editPost(this.props.id, this.props.user.nameid, this.state.editPostText);
+            this.toggleEditPost();
+        }
     }
 
     render() {
@@ -36,17 +59,28 @@ class Post extends Component {
                     </div>
                     <img onClick={this.togglePostOptions} src={MoreIcon} className={classes.MoreIcon} alt="" />
                     <RenderIf condition={this.state.postOptions}>
-                        <div className={classes.PostOptions}>
+                        <div className={classes.PostOptions} onClick={this.togglePostOptions}>
                             <RenderIf condition={this.props.userId == this.props.user.nameid}>
-                                <Ionicon onClick={() => this.props.toggleModal('edit')} icon="ios-brush" size="16px" color="#666" />
-                                <Ionicon icon="ios-trash" size="16px" color="#c0392b" />
+                                <Ionicon onClick={this.toggleEditPost} icon="md-create" size="16px" color="#A7A7A7" />
+                                <Ionicon onClick={() => this.props.toggleModal('delete', this.props.id)} icon="ios-trash" size="16px" color="#A7A7A7" />
                             </RenderIf>
-                            <Ionicon icon="ios-bulb" size="16px" color="#f39c12" />
+                            <Ionicon icon="ios-bulb" size="16px" color="#A7A7A7" />
                         </div>
                     </RenderIf>
                 </header>
                 <main>
-                    <p className={textClasses.join(' ')}>{this.props.postText}</p>
+                    <RenderIf condition={this.state.editPost}>
+                        <textarea
+                            value={this.state.editPostText}
+                            name="editPostText"
+                            onChange={this.handleInputChange}
+                            className={classes.EditPostArea}
+                            onKeyPress={this.editPostHandler} />
+                        <Ionicon onClick={this.toggleEditPost} className={classes.CloseEdit} icon="ios-close" color="#444" fontSize="27px" />
+                    </RenderIf>
+                    <RenderIf condition={!this.state.editPost}>
+                        <p className={textClasses.join(' ')}>{this.props.postText}</p>
+                    </RenderIf>
                     <RenderIf condition={this.props.photo}>
                         <img className={classes.Image} src={this.props.photo} alt="" />
                     </RenderIf>
@@ -71,4 +105,4 @@ const mapStateToProps = state => ({
     user: state.auth.user
 })
 
-export default connect(mapStateToProps, {})(Post);
+export default connect(mapStateToProps, { editPost })(Post);

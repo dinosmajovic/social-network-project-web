@@ -1,19 +1,31 @@
-.Profile {
-  width: 100%;
-  height: auto;
-  display: flex;
-}
-
-.ProfileInfo {
+.ProfileNavigation {
+  display: inline-block;
+  margin: 0 auto;
+  margin-bottom: 16px;
+  height: 58px;
+  padding-left: 24px;
+  padding-top: 21px;
+  padding-bottom: 0; 
   background: #fff;
-  width: 30%;
+  max-width: 544px;
+  width: 100%;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  border: solid 1px #e4e9ef;
 }
 
-.ProfilePosts {
-  width: 70%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+.ProfileNavLink {
+  margin-right: 24px;
+  text-decoration: none;
+  color: #1d1e37;
+  font-size: 16px;
+  padding-bottom: 13px;
+  border-bottom: 2px solid transparent;
+}
+
+.selected {
+  font-weight: 500;
+  border-bottom: 3px solid #1aa8ff;
 }
 
 .LoaderContainer {
