@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import classes from './Topbar.css';
 
 import Logo from '../Logo/Logo.jsx';

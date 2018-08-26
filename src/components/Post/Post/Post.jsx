@@ -60,7 +60,7 @@ class Post extends Component {
                     <img onClick={this.togglePostOptions} src={MoreIcon} className={classes.MoreIcon} alt="" />
                     <RenderIf condition={this.state.postOptions}>
                         <div className={classes.PostOptions} onClick={this.togglePostOptions}>
-                            <RenderIf condition={this.props.userId == this.props.user.nameid}>
+                            <RenderIf condition={this.props.userId === parseInt(this.props.user.nameid, 2)}>
                                 <Ionicon onClick={this.toggleEditPost} icon="md-create" size="16px" color="#A7A7A7" />
                                 <Ionicon onClick={() => this.props.toggleModal('delete', this.props.id)} icon="ios-trash" size="16px" color="#A7A7A7" />
                             </RenderIf>
@@ -92,7 +92,7 @@ class Post extends Component {
                         rows="1"
                         placeholder="Add Comment..."></textarea>
                     <div className={classes.LikeContainer}>
-                        <img src={HeartIcon} />
+                        <img src={HeartIcon} alt="" />
                         <span className={classes.LikesNum}>{this.props.likesNum}</span>
                     </div>
                 </footer>

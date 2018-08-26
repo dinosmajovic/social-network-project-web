@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classes from './Events.css'
 import Ionicon from 'react-ionicons'
-import {Route, withRouter} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 
 import Event from '../../components/Event/Event.jsx'
 import CreateEvent from '../../components/CreateEvent/CreateEvent';

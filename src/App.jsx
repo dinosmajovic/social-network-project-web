@@ -18,10 +18,6 @@ if (localStorage.jwtToken) {
   store.dispatch(setCurrentUser(decoded));
 }
 
-const NewsFeed = () => (
-  <h1>NewsFeed</h1>
-)
-
 class App extends Component {
   render() {
     return (

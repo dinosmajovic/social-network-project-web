@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {NavLink, Link, withRouter} from 'react-router-dom'
+import { NavLink, Link, withRouter } from 'react-router-dom'
 import classes from './DashboardNavigation.css'
 
 import Ionicon from 'react-ionicons';
@@ -49,7 +49,7 @@ class DashboardNavigation extends Component {
                   </span>
             </NavLink>
         </div>
-        <RenderIf condition={this.props.location.pathname == "/events"}>
+        <RenderIf condition={this.props.location.pathname === "/events"}>
           <Link to="/events/create" className={classes.CreateEventBtn} onClick={this.props.clicked}>
             <Ionicon  
               className={classes.AddIcon}
@@ -59,7 +59,7 @@ class DashboardNavigation extends Component {
             Create Event
           </Link>
         </RenderIf>
-        <RenderIf condition={this.props.location.pathname == "/groups"}>
+        <RenderIf condition={this.props.location.pathname === "/groups"}>
           <Link to="/groups/create" className={classes.CreateGroupBtn} onClick={this.props.clicked}>
             <Ionicon  
               className={classes.AddIcon}
