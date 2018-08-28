@@ -46,19 +46,11 @@
     align-items: center;
 }
 
-.Avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #f3f7fa;
-    display: inline-block;
-    margin-right: 8px;
-}
-
 .Name {
     font-size: 14px;
     color: #1d1e37;
     margin: 0;
+    margin-left: 8px;
     padding: 0;
     cursor: pointer;
     font-weight: 400;
@@ -68,6 +60,7 @@
     margin: 0;
     padding: 0;
     color: #a7a7a7;
+    margin-left: 8px;
     font-size: 12px;
     font-weight: 300;
 }

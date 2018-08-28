@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import Moment from 'react-moment';
 import { editPost } from '../../../actions/postActions';
 
+import UserIcon from '../../UI/UserIcon/UserIcon.jsx';
 import MoreIcon from './icons/more.svg';
 import HeartIcon from './icons/big-heart.svg';
 import Ionicon from 'react-ionicons';
@@ -52,7 +53,7 @@ class Post extends Component {
         return (
             <div className={classes.Post}>
                 <header>
-                    <span className={classes.Avatar}></span>
+                    <UserIcon image={this.props.user.photoUrl} width="40px" height="40px" />
                     <div className={classes.Info}>
                         <h3 className={classes.Name}>{this.props.name}</h3>
                         <Moment className={classes.Timestamp} fromNow>{this.props.timeStamp}</Moment>
