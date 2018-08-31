@@ -19,7 +19,7 @@ class PersonToFollow extends Component {
         }
         return (
             <li className={classes.PersonToFollow}>
-                <span className={classes.Avatar}></span>
+                <span style={{ backgroundImage: "url('" + this.props.photo + "')" }} className={classes.Avatar}></span>
                 <div>
                     <h4 className={classes.Name}>{this.props.name}</h4>
                     <p className={classes.Mutual}>{this.props.mutual} mutual friends</p>

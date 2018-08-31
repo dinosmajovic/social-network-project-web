@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Route, withRouter } from 'react-router-dom';
 
-import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
 import { setCurrentUser } from './actions/authActions';
 
@@ -14,8 +13,8 @@ import Dashboard from './containers/Dashboard/Dashboard.jsx'
 
 if (localStorage.jwtToken) {
   setAuthToken(localStorage.jwtToken);
-  const decoded = jwt_decode(localStorage.jwtToken);
-  store.dispatch(setCurrentUser(decoded));
+  const user = localStorage.user;
+  store.dispatch(setCurrentUser(JSON.parse(user)));
 }
 
 class App extends Component {

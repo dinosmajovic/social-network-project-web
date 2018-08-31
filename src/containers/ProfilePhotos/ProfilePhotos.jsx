@@ -2,16 +2,28 @@ import React, { Component } from 'react';
 import classes from './ProfilePhotos.css';
 import Gallery from 'react-photo-gallery';
 import Lightbox from 'react-images';
+import { connect } from 'react-redux';
+import { getUser } from '../../actions/userActions';
+import RenderIf from '../../Helpers/RenderIf.jsx';
+import Ionicon from 'react-ionicons';
+import axios from 'axios';
+import { API } from '../../constants';
 
 class ProfilePhotos extends Component {
   state = {
-    currentImage: 0
+    currentImage: 0,
+    currentImageId: 0,
+    editPhoto: false,
+    isMain: false
   }
-  
+
   openLightbox = (event, obj) => {
     this.setState({
       currentImage: obj.index,
+      currentImageId: obj.photo.id,
+      isMain: obj.photo.isMain,
       lightboxIsOpen: true,
+      editPhoto: true
     });
   }
 
@@ -19,109 +31,77 @@ class ProfilePhotos extends Component {
     this.setState({
       currentImage: 0,
       lightboxIsOpen: false,
+      editPhoto: false
     });
   }
 
+  deletePhoto = () => {
+    axios.delete(API + '/users/' + this.props.currentUser.id + '/photos/' + this.state.currentImageId, {
+      headers: {
+        'Authorization': 'Bearer ' + localStorage.jwtToken
+      }
+    })
+      .then(res => this.props.getUser(this.props.currentUser.id))
+      .catch(err => console.log(err.data))
+
+    this.closeLightbox();
+  }
+
+  setMainPhoto = () => {
+    axios.post(API + '/users/' + this.props.currentUser.id + '/photos/' + this.state.currentImageId + '/setMain', null, {
+      headers: {
+        'Authorization': 'Bearer ' + localStorage.jwtToken
+      }
+    })
+      .then(res => {
+        this.props.getUser(this.props.currentUser.id);
+      })
+      .catch(err => console.log(err.data))
+
+    this.closeLightbox();
+  }
+
   gotoPrevious = () => {
+    const id = this.props.user.photos[this.state.currentImage - 1].id;
     this.setState({
       currentImage: this.state.currentImage - 1,
+      currentImageId: id
     });
   }
 
   gotoNext = () => {
+    const id = this.props.user.photos[this.state.currentImage + 1].id;
     this.setState({
       currentImage: this.state.currentImage + 1,
+      currentImageId: id
     });
   }
 
   render() {
-    const photos = [
-      {
-        src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599",
-        width: 4,
-        height: 3,
-      },
-      {
-        src: "https://source.unsplash.com/Dm-qxdynoEc/800x799",
-        width: 1,
-        height: 1
-      },
-      {
-        src: "https://source.unsplash.com/qDkso9nvCg0/600x799",
-        width: 3,
-        height: 4
-      },
-      {
-        src: "https://source.unsplash.com/iecJiKe_RNg/600x799",
-        width: 3,
-        height: 4
-      },
-      {
-        src: "https://source.unsplash.com/epcsn8Ed8kY/600x799",
-        width: 3,
-        height: 4
-      },
-      {
-        src: "https://source.unsplash.com/NQSWvyVRIJk/800x599",
-        width: 4,
-        height: 3
-      },
-      {
-        src: "https://source.unsplash.com/zh7GEuORbUw/600x799",
-        width: 3,
-        height: 4
-      },
-      {
-        src: "https://source.unsplash.com/PpOHJezOalU/800x599",
-        width: 4,
-        height: 3
-      },
-      {
-        src: "https://source.unsplash.com/I1ASdgphUH4/800x599",
-        width: 4,
-        height: 3
-      },
-      {
-        src: "https://source.unsplash.com/XiDA78wAZVw/600x799",
-        width: 3,
-        height: 4
-      },
-      {
-        src: "https://source.unsplash.com/x8xJpClTvR0/800x599",
-        width: 4,
-        height: 3
-      },
-      {
-        src: "https://source.unsplash.com/qGQNmBE7mYw/800x599",
-        width: 4,
-        height: 3
-      },
-      {
-        src: "https://source.unsplash.com/NuO6iTBkHxE/800x599",
-        width: 4,
-        height: 3
-      },
-      {
-        src: "https://source.unsplash.com/pF1ug8ysTtY/600x400",
-        width: 4,
-        height: 3
-      },
-      {
-        src: "https://source.unsplash.com/A-fubu9QJxE/800x533",
-        width: 4,
-        height: 3
-      },
-      {
-        src: "https://source.unsplash.com/5P91SF0zNsI/740x494",
-        width: 4,
-        height: 3
-      }
-    ];
+    console.log(this.state)
+    let photosToReturn;
+    if (Object.keys(this.props.user).length !== 0) {
+      photosToReturn = this.props.user.photos.map(photo => (
+        {
+          src: photo.url,
+          width: 1,
+          height: 1,
+          id: photo.id,
+          isMain: photo.isMain
+        }
+      ))
+    }
+
+    let mainButtonClasses = [classes.SetMainBtn]
+    if (this.state.isMain)
+      mainButtonClasses.push(classes.IsMain);
 
     return (
       <div className={classes.ProfilePhotos}>
-        <Gallery photos={photos} direction={"column"} onClick={this.openLightbox} />
-        <Lightbox images={photos}
+        <RenderIf condition={Object.keys(this.props.user).length !== 0}>
+          <Gallery photos={photosToReturn} direction={"column"} onClick={this.openLightbox} />
+        </RenderIf>
+        <Lightbox images={photosToReturn}
           onClose={this.closeLightbox}
           onClickPrev={this.gotoPrevious}
           onClickNext={this.gotoNext}
@@ -129,9 +109,23 @@ class ProfilePhotos extends Component {
           isOpen={this.state.lightboxIsOpen}
           backdropClosesModal={true}
         />
+        <RenderIf condition={this.props.currentUser.id == this.props.user.id}>
+          <RenderIf condition={this.state.editPhoto}>
+            <div className={classes.EditPhoto}>
+              <Ionicon onClick={this.deletePhoto} icon="ios-trash" fontSize="30px" color="#ffffff" />
+              <button onClick={this.setMainPhoto} className={mainButtonClasses.join(" ")}>Main</button>
+              <p>{this.state.currentImageId}</p>
+            </div>
+          </RenderIf>
+        </RenderIf>
       </div>
     );
   }
 }
 
-export default ProfilePhotos;
+const mapStateToProps = state => ({
+  user: state.user.userPayload,
+  currentUser: state.auth.user
+})
+
+export default connect(mapStateToProps, { getUser })(ProfilePhotos);

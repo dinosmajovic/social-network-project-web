@@ -1,9 +1,28 @@
 import React, { Component } from 'react';
 import classes from './NewsFeed.css';
+import { connect } from 'react-redux';
+
+import { getFeed } from '../../actions/userActions';
 import CreatePost from '../../components/Post/CreatePost/CreatePost';
 import Post from '../../components/Post/Post/Post';
+import { PulseLoader } from 'react-spinners';
+
 
 class NewsFeed extends Component {
+    state = {
+        userFeed: {}
+    }
+
+    componentDidMount() {
+        this.props.getFeed(this.props.currentUser.id);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.userFeed) {
+            this.setState({ userFeed: nextProps.userFeed })
+        }
+    }
+
     render() {
         const posts = [
             {
@@ -21,14 +40,32 @@ class NewsFeed extends Component {
             }
         ];
 
-        let postsToReturn = posts.map(post => (
-            <Post 
-                name={post.name}
-                photo={post.photo}
-                postText={post.postText} 
-                timeStamp={post.timeStamp}
-                likesNum={post.likesNum} />
-        ));
+        const { userFeed } = this.props;
+
+        let postsToReturn = <PulseLoader
+            sizeUnit={"px"}
+            size={15}
+            color={'#000'}
+            loading={true}
+        />
+
+        if (this.state.userFeed !== null) {
+            if (Object.keys(this.state.userFeed).length !== 0) {
+              postsToReturn = this.state.userFeed.map(post => (
+                <Post
+                  toggleModal={this.toggleModal}
+                  userId={post.userId}
+                  name={post.userId}
+                  photo={false}
+                  postText={post.content}
+                  timeStamp={post.datePublished}
+                  id={post.id}
+                  likesNum={post.likesNum} />
+              ));
+            }
+          } else {
+            postsToReturn = <p>No posts</p>
+          }
 
         return (
             <div className={classes.NewsFeed}>
@@ -39,4 +76,9 @@ class NewsFeed extends Component {
     }
 }
 
-export default NewsFeed;
+const mapStateToProps = state => ({
+    currentUser: state.auth.user,
+    userFeed: state.user.userFeed
+})
+
+export default connect(mapStateToProps, { getFeed })(NewsFeed);

@@ -18,15 +18,15 @@ class UserSettingsAvatar extends Component {
     }
 
     goToProfile = () => {
-        this.props.history.push('/user/' + this.props.user.nameid)
+        this.props.history.push('/user/' + this.props.user.id)
     }
 
     render() {
         return [
             <div className={classes.UserSettingsAvatar} >
-                <span className={classes.Username} onClick={this.goToProfile} >{this.props.user.unique_name}</span>
+                <span className={classes.Username} onClick={this.goToProfile} >{this.props.user.username}</span>
                 <div className={classes.IconContainer} onClick={this.toggleUserSettings} >
-                    <UserIcon image={this.props.user.actort} width="40px" height="40px" />
+                    <UserIcon image={this.props.user.photoUrl} width="40px" height="40px" />
                 </div>
             </div>,
             <RenderIf condition={this.state.userSettings}>

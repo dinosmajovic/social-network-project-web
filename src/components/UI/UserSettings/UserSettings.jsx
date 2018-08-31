@@ -3,6 +3,7 @@ import classes from './UserSettings.css';
 
 import { connect } from 'react-redux';
 import { logoutUser } from '../../../actions/authActions';
+import { withRouter } from 'react-router';
 import UserIcon from '../UserIcon/UserIcon';
 
 class UserSettings extends Component {
@@ -12,13 +13,18 @@ class UserSettings extends Component {
         this.props.logoutUser();
     }
 
+    goToProfile = () => {
+        this.props.history.push('/user/' + this.props.currentUser.id)
+        this.props.clicked();
+    }
+
     render() {
         return (
             <div className={classes.UserSettings}>
                 <div className={classes.IconContainer}>
-                    <UserIcon image={this.props.avatarPhoto.actort} width="100px" height="100px" />
+                    <UserIcon image={this.props.currentUser.photoUrl} width="100px" height="100px" />
                 </div>
-                <span className={classes.Username}>{this.props.name}</span>
+                <span onClick={this.goToProfile} className={classes.Username}>{this.props.currentUser.username}</span>
                 <button className={classes.SettingsBtn}>Settings</button>
                 <button className={classes.LogoutBtn} onClick={this.logoutUser}>Logout</button>
             </div>
@@ -27,8 +33,7 @@ class UserSettings extends Component {
 }
 
 const mapStateToProps = state => ({
-    avatarPhoto: state.auth.user,
-    name: state.auth.user.unique_name
+    currentUser: state.auth.user
 })
 
-export default connect(mapStateToProps, { logoutUser })(UserSettings);
+export default connect(mapStateToProps, { logoutUser })(withRouter(UserSettings));

@@ -5,17 +5,29 @@ import RenderIf from '../../../Helpers/RenderIf';
 import { connect } from 'react-redux';
 import Moment from 'react-moment';
 import { editPost } from '../../../actions/postActions';
-
+import axios from 'axios';
 import UserIcon from '../../UI/UserIcon/UserIcon.jsx';
 import MoreIcon from './icons/more.svg';
 import HeartIcon from './icons/big-heart.svg';
 import Ionicon from 'react-ionicons';
+import { API } from '../../../constants';
 
 class Post extends Component {
     state = {
         postOptions: false,
         editPost: false,
-        editPostText: this.props.postText
+        editPostText: this.props.postText,
+        user: {}
+    }
+
+    componentDidMount() {
+        axios.get(API + '/users/' + this.props.userId, {
+            headers: {
+                'Authorization': 'Bearer ' + localStorage.jwtToken
+            }
+        })
+            .then(res => this.setState({ user: res.data }))
+            .catch(err => console.log(err.data));
     }
 
     handleInputChange = e => {
@@ -39,7 +51,7 @@ class Post extends Component {
 
     editPostHandler = e => {
         if (e.key === 'Enter') {
-            this.props.editPost(this.props.id, this.props.user.nameid, this.state.editPostText);
+            this.props.editPost(this.props.id, this.props.user.id, this.state.editPostText);
             this.toggleEditPost();
         }
     }
@@ -49,19 +61,18 @@ class Post extends Component {
         if (this.props.photo) {
             textClasses.push(String(classes.TextWithImage))
         }
-
         return (
             <div className={classes.Post}>
                 <header>
-                    <UserIcon image={this.props.user.photoUrl} width="40px" height="40px" />
+                    <UserIcon image={this.state.user.photoUrl} width="40px" height="40px" />
                     <div className={classes.Info}>
-                        <h3 className={classes.Name}>{this.props.name}</h3>
+                        <h3 className={classes.Name}>{this.state.user.username}</h3>
                         <Moment className={classes.Timestamp} fromNow>{this.props.timeStamp}</Moment>
                     </div>
                     <img onClick={this.togglePostOptions} src={MoreIcon} className={classes.MoreIcon} alt="" />
                     <RenderIf condition={this.state.postOptions}>
                         <div className={classes.PostOptions} onClick={this.togglePostOptions}>
-                            <RenderIf condition={this.props.userId === parseInt(this.props.user.nameid, 2)}>
+                            <RenderIf condition={this.props.currentUser.id == this.state.user.id}>
                                 <Ionicon onClick={this.toggleEditPost} icon="md-create" size="16px" color="#A7A7A7" />
                                 <Ionicon onClick={() => this.props.toggleModal('delete', this.props.id)} icon="ios-trash" size="16px" color="#A7A7A7" />
                             </RenderIf>
@@ -103,7 +114,8 @@ class Post extends Component {
 }
 
 const mapStateToProps = state => ({
-    user: state.auth.user
+    user: state.user.userPayload,
+    currentUser: state.auth.user
 })
 
 export default connect(mapStateToProps, { editPost })(Post);

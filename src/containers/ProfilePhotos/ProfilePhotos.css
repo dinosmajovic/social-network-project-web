@@ -3,3 +3,34 @@
     width: 100%;
     margin: 0 auto;
 }
+
+.EditPhoto {
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.SetMainBtn {
+    border: 1px solid #ffffff;
+    background: transparent;
+    color: #fff;
+    border-radius: 3px;
+    padding: 5px 15px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.IsMain {
+    background: #fff;
+    color: #000;
+}
+
+.EditPhoto svg {
+    cursor: pointer;
+}
