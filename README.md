@@ -1,5 +1,7 @@
 # Social Network Project Web
 
+![Mopsters screenshot](https://res.cloudinary.com/dapflmgcn/image/upload/v1549295413/image_1.png)
+
 Ministry Of Programming - Social network project web
 
 ## Getting Started
